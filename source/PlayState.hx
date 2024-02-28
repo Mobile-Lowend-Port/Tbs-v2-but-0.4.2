@@ -874,7 +874,7 @@ class PlayState extends MusicBeatState
 
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
-		var daScripts:Array<String> = [''script', 'script1', 'script2', 'script3', 'script4', 'script5', 'script6', 'script7', 'script8']; // I don't think I need to explain this 
+		var daScripts:Array<String> = ['script', 'script1', 'script2', 'script3', 'script4', 'script5', 'script6', 'script7', 'script8']; // I don't think I need to explain this 
 		for (script in daScripts) {
 			var scriptPath:String = Paths.getPreloadPath('scripts/' + script + '.lua');
 			if (OpenFlAssets.exists(scriptPath))
@@ -1191,7 +1191,7 @@ class PlayState extends MusicBeatState
 		}
 		#end
 		
-	    #if (LUA_ALLOWED)
+	    #if LUA_ALLOWED
 		var doPush:Bool = false;
 		var luaFile:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/Song Name.lua';
 			luaFile = Paths.getPreloadPath(luaFile);
@@ -1203,7 +1203,7 @@ class PlayState extends MusicBeatState
 			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
 		#end
 		
-		    #if (LUA_ALLOWED)
+		    #if LUA_ALLOWED
 		var doPush:Bool = false;
 		var luaFile:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/camera follow pos.lua';
 			luaFile = Paths.getPreloadPath(luaFile);
@@ -1215,7 +1215,7 @@ class PlayState extends MusicBeatState
 			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
 		#end
 		
-		    #if (LUA_ALLOWED)
+		    #if LUA_ALLOWED
 		var doPush:Bool = false;
 		var luaFile:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/loading.lua';
 			luaFile = Paths.getPreloadPath(luaFile);
@@ -1227,7 +1227,7 @@ class PlayState extends MusicBeatState
 			luaArray.push(new FunkinLua(Asset2File.getPath(luaFile)));
 		#end
 		
-		    #if (LUA_ALLOWED)
+		    #if LUA_ALLOWED
 		var doPush:Bool = false;
 		var luaFile:String = 'data/' + Paths.formatToSongPath(SONG.song) + '/add characters list.lua';
 			luaFile = Paths.getPreloadPath(luaFile);
