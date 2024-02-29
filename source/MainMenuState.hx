@@ -145,7 +145,7 @@ class MainMenuState extends MusicBeatState
 	        menustorychar.frames = Paths.getSparrowAtlas('mainmenuchar/storymode');
 	        menustorychar.scale.x = scaleChar;
 	        menustorychar.scale.y = scaleChar;
-		//menustorychar.x = -750;
+		menustorychar.x = -750;
 		menustorychar.y = 90;
 	        menustorychar.animation.addByPrefix('a', 'storymode', 24, true);
 	        menustorychar.animation.play('a');
@@ -159,7 +159,7 @@ class MainMenuState extends MusicBeatState
 	        menufreechar.frames = Paths.getSparrowAtlas('mainmenuchar/freeplay');
 	        menufreechar.scale.x = scaleChar;
 	        menufreechar.scale.y = scaleChar;
-		//menufreechar.x = -750;
+		menufreechar.x = -750;
 		menufreechar.y = 90;
 	        menufreechar.animation.addByPrefix('a', 'freeplay', 24, true);
 	        menufreechar.animation.play('a');
@@ -173,7 +173,7 @@ class MainMenuState extends MusicBeatState
 	        menucreditschar.frames = Paths.getSparrowAtlas('mainmenuchar/credits');
 	        menucreditschar.scale.x = scaleChar;
 	        menucreditschar.scale.y = scaleChar;
-		//menucreditschar.x = -750;
+		menucreditschar.x = -750;
 		menucreditschar.y = 90;
 	        menucreditschar.animation.addByPrefix('a', 'credits', 24, true);
 	    menucreditschar.animation.play('a');
@@ -187,7 +187,7 @@ class MainMenuState extends MusicBeatState
 	        menuoptionschar.frames = Paths.getSparrowAtlas('mainmenuchar/options');
 	        menuoptionschar.scale.x = scaleChar;
 	        menuoptionschar.scale.y = scaleChar;
-		//menuoptionschar.x = -750;
+		menuoptionschar.x = -750;
 		menuoptionschar.y = 90;
 	        menuoptionschar.animation.addByPrefix('nb', 'options', 24, true);
 	        menuoptionschar.animation.play('nb');

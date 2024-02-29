@@ -2052,6 +2052,12 @@ class PlayState extends MusicBeatState
 
 	public function startCountdown():Void
 	{
+	if (SONG.song == "Freeplay" || SONG.song == "Freeplay1" || SONG.song == "Freeplay2" || SONG.song == "Freeplay3" || SONG.song == "Freeplay4" || SONG.song == "Freeplay5")
+			{
+			#if mobile
+			mobileControls.visible = true;
+			#end	
+			}
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown', []);
 			return;
@@ -4121,7 +4127,7 @@ class PlayState extends MusicBeatState
 		}
 
 		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating.image + pixelShitPart2));
-		rating.cameras = [camHUD];
+		rating.cameras = [camGame];
 		rating.screenCenter();
 		rating.x = coolText.x - 40;
 		rating.y -= 60;
@@ -4138,7 +4144,7 @@ class PlayState extends MusicBeatState
 		comboSpr.x = coolText.x;
 		comboSpr.acceleration.y = FlxG.random.int(200, 300) * playbackRate * playbackRate;
 		comboSpr.velocity.y -= FlxG.random.int(140, 160) * playbackRate;
-		//comboSpr.visible = (!ClientPrefs.hideHud && showCombo);
+		comboSpr.visible = false;
 		comboSpr.x += ClientPrefs.comboOffset[0];
 		comboSpr.y -= ClientPrefs.comboOffset[1];
 		comboSpr.y += 60;
@@ -4224,7 +4230,7 @@ class PlayState extends MusicBeatState
 			numScore.acceleration.y = FlxG.random.int(200, 300) * playbackRate * playbackRate;
 			numScore.velocity.y -= FlxG.random.int(140, 160) * playbackRate;
 			numScore.velocity.x = FlxG.random.float(-5, 5) * playbackRate;
-			numScore.visible = true;
+			numScore.visible = false;
 
 			//if (combo >= 10 || combo == 0)
 			if(showComboNum)
