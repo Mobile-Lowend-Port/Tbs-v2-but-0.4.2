@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="andrPad.png">
+<SubTexture name="left0000" x="0" y="0" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="left0001" x="132" y="0" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="down0000" x="0" y="125" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="down0001" x="132" y="125" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="up0000" x="264" y="0" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="up0001" x="264" y="125" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="right0000" x="0" y="250" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="right0001" x="132" y="250" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="a0000" x="264" y="250" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="a0001" x="396" y="0" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="b0000" x="396" y="125" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="b0001" x="396" y="250" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="c0000" x="0" y="375" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="d0000" x="132" y="375" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="d0001" x="264" y="375" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="e0000" x="396" y="375" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="e0001" x="528" y="0" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="f0000" x="528" y="125" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="f0001" x="528" y="250" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="g0000" x="528" y="375" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="g0001" x="0" y="500" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="s0000" x="132" y="500" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="s0001" x="264" y="500" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="v0000" x="396" y="500" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="v0001" x="528" y="500" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="x0000" x="660" y="0" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="x0001" x="660" y="125" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="y0000" x="660" y="250" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="y0001" x="660" y="375" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+<SubTexture name="z0000" x="660" y="500" width="132" height="125" frameX="0" frameY="0" frameWidth="132" frameHeight="127" />
+<SubTexture name="z0001" x="0" y="625" width="132" height="125" frameX="0" frameY="-2" frameWidth="132" frameHeight="127" />
+</TextureAtlas>
