@@ -40,6 +40,10 @@ class MainMenuState extends MusicBeatState
 	];
 
 	var magenta:FlxSprite;
+	var menustorychar:FlxSprite;
+	var menufreechar:FlxSprite;
+	var menucreditschar:FlxSprite;
+	var menuoptionschar:FlxSprite;
 	//var camFollow:FlxObject;
 	//var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
@@ -120,7 +124,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
-			menuItem.x= 100;
+			//menuItem.x= 100;
 			//menuItem.centerOffsets(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
@@ -133,6 +137,50 @@ class MainMenuState extends MusicBeatState
 
 		//FlxG.camera.follow(camFollowPos, null, 1);
 
+		menustorychar = new FlxSprite(-300, 0);
+	        menustorychar.frames = Paths.getSparrowAtlas('menuchar/storymode');
+	        menustorychar.scale.x = scale;
+	        menustorychar.scale.y = scale;
+	        menustorychar.animation.addByPrefix('a', 'storymode', 24, true);
+		menustorychar.visible = true;
+		menustorychar.antialiasing = ClientPrefs.globalAntialiasing;
+		menustorychar.updateHitbox();
+		menustorychar.screenCenter(X);
+	        add(menustorychar);
+		
+                menufreechar = new FlxSprite(-300, 0);
+	        menufreechar.frames = Paths.getSparrowAtlas('menuchar/freeplay');
+	        menufreechar.scale.x = scale;
+	        menufreechar.scale.y = scale;
+	        menufreechar.animation.addByPrefix('a', 'freeplay', 24, true);
+		menufreechar.visible = false;
+		menufreechar.antialiasing = ClientPrefs.globalAntialiasing;
+		menufreechar.updateHitbox();
+		menufreechar.screenCenter(X);
+	        add(menufreechar);
+
+		menucreditschar = new FlxSprite(-300, 0);
+	        menucreditschar.frames = Paths.getSparrowAtlas('menuchar/credits');
+	        menucreditschar.scale.x = scale;
+	        menucreditschar.scale.y = scale;
+	        menucreditschar.animation.addByPrefix('a', 'credits', 24, true);
+		menucreditschar.visible = false;
+		menucreditschar.antialiasing = ClientPrefs.globalAntialiasing;
+		menucreditschar.updateHitbox();
+		menucreditschar.screenCenter(X);
+	        add(menucreditschar);
+
+		menuoptionschar = new FlxSprite(-300, 0);
+	        menuoptionschar.frames = Paths.getSparrowAtlas('menuchar/options');
+	        menuoptionschar.scale.x = scale;
+	        menuoptionschar.scale.y = scale;
+	        menuoptionschar.animation.addByPrefix('a', 'options', 24, true);
+		menuoptionschar.visible = false;
+		menuoptionschar.antialiasing = ClientPrefs.globalAntialiasing;
+		menuoptionschar.updateHitbox();
+		menuoptionschar.screenCenter(X);
+	        add(menuoptionschar);
+		
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -179,6 +227,7 @@ class MainMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
+		optionsshit()
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
@@ -277,6 +326,38 @@ class MainMenuState extends MusicBeatState
 		{
 			spr.screenCenter(X);
 		});
+	}
+
+	function optionsshit()
+	{
+	if (optionShit[curSelected] == 'storymode')
+	{
+	menucreditschar.visible = false;
+	menuoptionschar.visible = false;
+	menustorychar.visible = true;
+	menufreechar.visible = false;
+        }
+	if (optionShit[curSelected] == 'freeplay')
+	{
+	menucreditschar.visible = false;
+	menuoptionschar.visible = false;
+	menustorychar.visible = false;
+	menufreechar.visible = true;
+        }
+        if (optionShit[curSelected] == 'credits')
+	{
+	menucreditschar.visible = true;
+	menuoptionschar.visible = false;
+	menustorychar.visible = false;
+	menufreechar.visible = false;
+        }
+	if (optionShit[curSelected] == 'options')
+	{
+	menucreditschar.visible = false;
+	menuoptionschar.visible = true;
+	menustorychar.visible = false;
+	menufreechar.visible = false;
+	}
 	}
 
 	function changeItem(huh:Int = 0)
