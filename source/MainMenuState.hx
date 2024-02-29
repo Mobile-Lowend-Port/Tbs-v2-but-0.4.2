@@ -138,10 +138,10 @@ class MainMenuState extends MusicBeatState
 		//FlxG.camera.follow(camFollowPos, null, 1);
 
 		menustorychar = new FlxSprite(0);
-	        menustorychar.frames = Paths.getSparrowAtlas('menuchar/storymode');
+	        menustorychar.frames = Paths.getSparrowAtlas('mainmenuchar/storymode');
 	        menustorychar.scale.x = scale;
 	        menustorychar.scale.y = scale;
-		menustorychar.x = -450;
+		menustorychar.x = -750;
 		menustorychar.y = 90;
 	        menustorychar.animation.addByPrefix('a', 'storymode', 24, true);
 		menustorychar.visible = true;
@@ -151,10 +151,10 @@ class MainMenuState extends MusicBeatState
 	        add(menustorychar);
 		
                 menufreechar = new FlxSprite(0);
-	        menufreechar.frames = Paths.getSparrowAtlas('menuchar/freeplay');
+	        menufreechar.frames = Paths.getSparrowAtlas('mainmenuchar/freeplay');
 	        menufreechar.scale.x = scale;
 	        menufreechar.scale.y = scale;
-		menufreechar.x = -450;
+		menufreechar.x = -750;
 		menufreechar.y = 90;
 	        menufreechar.animation.addByPrefix('a', 'freeplay', 24, true);
 		menufreechar.visible = false;
@@ -164,10 +164,10 @@ class MainMenuState extends MusicBeatState
 	        add(menufreechar);
 
 		menucreditschar = new FlxSprite(0);
-	        menucreditschar.frames = Paths.getSparrowAtlas('menuchar/credits');
+	        menucreditschar.frames = Paths.getSparrowAtlas('mainmenuchar/credits');
 	        menucreditschar.scale.x = scale;
 	        menucreditschar.scale.y = scale;
-		menucreditschar.x = -450;
+		menucreditschar.x = -750;
 		menucreditschar.y = 90;
 	        menucreditschar.animation.addByPrefix('a', 'credits', 24, true);
 		menucreditschar.visible = false;
@@ -177,10 +177,10 @@ class MainMenuState extends MusicBeatState
 	        add(menucreditschar);
 
 		menuoptionschar = new FlxSprite(0);
-	        menuoptionschar.frames = Paths.getSparrowAtlas('menuchar/options');
+	        menuoptionschar.frames = Paths.getSparrowAtlas('mainmenuchar/options');
 	        menuoptionschar.scale.x = scale;
 	        menuoptionschar.scale.y = scale;
-		menuoptionschar.x = -450;
+		menuoptionschar.x = -750;
 		menuoptionschar.y = 90;
 	        menuoptionschar.animation.addByPrefix('a', 'options', 24, true);
 		menuoptionschar.visible = false;
