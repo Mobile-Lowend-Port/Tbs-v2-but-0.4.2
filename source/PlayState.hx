@@ -2062,7 +2062,7 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
 			#if mobile
-			mobileControls.visible = true;
+			mobileControls.visible = false;
 			#end
 			generateStaticArrows(0);
 			generateStaticArrows(1);
