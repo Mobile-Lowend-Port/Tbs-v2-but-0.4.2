@@ -108,14 +108,15 @@ class MainMenuState extends MusicBeatState
 		add(menuItems);
 
 		var scale:Float = 0.7;
+		var scaleChar:Float = 1;
 		/*if(optionShit.length > 6) {
 			scale = 6 / optionShit.length;
 		}*/
 
 		for (i in 0...optionShit.length)
 		{
-			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(FlxG.width * 2.5, (i * 140)  + offset);
+			var offset:Float = 130 - (Math.max(optionShit.length, 4) - 4) * 80;
+			var menuItem:FlxSprite = new FlxSprite(-600, (i * 135)/*  + offset*/);
 			menuItem.scale.x = scale;
 			menuItem.scale.y = scale;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
@@ -123,66 +124,73 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			menuItem.screenCenter(X);
-			//menuItem.x= 100;
-			//menuItem.centerOffsets(X);
+			
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
-			menuItem.scrollFactor.set(0, scr);
+			//menuItem.scrollFactor.set(0, scr);
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
+			
+			if (menuItem.ID == curSelected){
+			menuItem.animation.play('selected');
+			menuItem.updateHitbox();
+			}
 		}
 
 		//FlxG.camera.follow(camFollowPos, null, 1);
 
-		menustorychar = new FlxSprite(0);
+		menustorychar = new FlxSprite(-550);
 	        menustorychar.frames = Paths.getSparrowAtlas('mainmenuchar/storymode');
-	        menustorychar.scale.x = scale;
-	        menustorychar.scale.y = scale;
-		menustorychar.x = -750;
+	        menustorychar.scale.x = scaleChar;
+	        menustorychar.scale.y = scaleChar;
+		//menustorychar.x = -750;
 		menustorychar.y = 90;
 	        menustorychar.animation.addByPrefix('a', 'storymode', 24, true);
+	        menustorychar.animation.play('a');
 		menustorychar.visible = true;
 		menustorychar.antialiasing = ClientPrefs.globalAntialiasing;
 		menustorychar.updateHitbox();
 		menustorychar.screenCenter();
 	        add(menustorychar);
 		
-                menufreechar = new FlxSprite(0);
+                menufreechar = new FlxSprite(-550);
 	        menufreechar.frames = Paths.getSparrowAtlas('mainmenuchar/freeplay');
-	        menufreechar.scale.x = scale;
-	        menufreechar.scale.y = scale;
-		menufreechar.x = -750;
+	        menufreechar.scale.x = scaleChar;
+	        menufreechar.scale.y = scaleChar;
+		//menufreechar.x = -750;
 		menufreechar.y = 90;
 	        menufreechar.animation.addByPrefix('a', 'freeplay', 24, true);
+	        menufreechar.animation.play('a');
 		menufreechar.visible = false;
 		menufreechar.antialiasing = ClientPrefs.globalAntialiasing;
 		menufreechar.updateHitbox();
 		menufreechar.screenCenter();
 	        add(menufreechar);
 
-		menucreditschar = new FlxSprite(0);
+		menucreditschar = new FlxSprite(-550);
 	        menucreditschar.frames = Paths.getSparrowAtlas('mainmenuchar/credits');
-	        menucreditschar.scale.x = scale;
-	        menucreditschar.scale.y = scale;
-		menucreditschar.x = -750;
+	        menucreditschar.scale.x = scaleChar;
+	        menucreditschar.scale.y = scaleChar;
+		//menucreditschar.x = -750;
 		menucreditschar.y = 90;
 	        menucreditschar.animation.addByPrefix('a', 'credits', 24, true);
+	    menucreditschar.animation.play('a');
 		menucreditschar.visible = false;
 		menucreditschar.antialiasing = ClientPrefs.globalAntialiasing;
 		menucreditschar.updateHitbox();
 		menucreditschar.screenCenter();
 	        add(menucreditschar);
 
-		menuoptionschar = new FlxSprite(0);
+		menuoptionschar = new FlxSprite(-550);
 	        menuoptionschar.frames = Paths.getSparrowAtlas('mainmenuchar/options');
-	        menuoptionschar.scale.x = scale;
-	        menuoptionschar.scale.y = scale;
-		menuoptionschar.x = -750;
+	        menuoptionschar.scale.x = scaleChar;
+	        menuoptionschar.scale.y = scaleChar;
+		//menuoptionschar.x = -750;
 		menuoptionschar.y = 90;
 	        menuoptionschar.animation.addByPrefix('nb', 'options', 24, true);
+	        menuoptionschar.animation.play('nb');
 		menuoptionschar.visible = false;
 		menuoptionschar.antialiasing = ClientPrefs.globalAntialiasing;
 		menuoptionschar.updateHitbox();
