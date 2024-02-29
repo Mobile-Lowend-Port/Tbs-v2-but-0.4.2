@@ -115,7 +115,7 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(250, (i * 140)  + offset);
+			var menuItem:FlxSprite = new FlxSprite(FlxG.width * 2.5, (i * 140)  + offset);
 			menuItem.scale.x = scale;
 			menuItem.scale.y = scale;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
@@ -137,48 +137,56 @@ class MainMenuState extends MusicBeatState
 
 		//FlxG.camera.follow(camFollowPos, null, 1);
 
-		menustorychar = new FlxSprite(-300, 0);
-	        menustorychar.frames = Paths.getSparrowAtlas('mainmenuchar/storymode');
+		menustorychar = new FlxSprite(0);
+	        menustorychar.frames = Paths.getSparrowAtlas('menuchar/storymode');
 	        menustorychar.scale.x = scale;
 	        menustorychar.scale.y = scale;
+		menustorychar.x = -450;
+		menustorychar.y = 90;
 	        menustorychar.animation.addByPrefix('a', 'storymode', 24, true);
 		menustorychar.visible = true;
 		menustorychar.antialiasing = ClientPrefs.globalAntialiasing;
 		menustorychar.updateHitbox();
-		menustorychar.screenCenter(X);
+		menustorychar.screenCenter();
 	        add(menustorychar);
 		
-                menufreechar = new FlxSprite(-300, 0);
-	        menufreechar.frames = Paths.getSparrowAtlas('mainmenuchar/freeplay');
+                menufreechar = new FlxSprite(0);
+	        menufreechar.frames = Paths.getSparrowAtlas('menuchar/freeplay');
 	        menufreechar.scale.x = scale;
 	        menufreechar.scale.y = scale;
+		menufreechar.x = -450;
+		menufreechar.y = 90;
 	        menufreechar.animation.addByPrefix('a', 'freeplay', 24, true);
 		menufreechar.visible = false;
 		menufreechar.antialiasing = ClientPrefs.globalAntialiasing;
 		menufreechar.updateHitbox();
-		menufreechar.screenCenter(X);
+		menufreechar.screenCenter();
 	        add(menufreechar);
 
-		menucreditschar = new FlxSprite(-300, 0);
-	        menucreditschar.frames = Paths.getSparrowAtlas('mainmenuchar/credits');
+		menucreditschar = new FlxSprite(0);
+	        menucreditschar.frames = Paths.getSparrowAtlas('menuchar/credits');
 	        menucreditschar.scale.x = scale;
 	        menucreditschar.scale.y = scale;
+		menucreditschar.x = -450;
+		menucreditschar.y = 90;
 	        menucreditschar.animation.addByPrefix('a', 'credits', 24, true);
 		menucreditschar.visible = false;
 		menucreditschar.antialiasing = ClientPrefs.globalAntialiasing;
 		menucreditschar.updateHitbox();
-		menucreditschar.screenCenter(X);
+		menucreditschar.screenCenter();
 	        add(menucreditschar);
 
-		menuoptionschar = new FlxSprite(-300, 0);
-	        menuoptionschar.frames = Paths.getSparrowAtlas('mainmenuchar/options');
+		menuoptionschar = new FlxSprite(0);
+	        menuoptionschar.frames = Paths.getSparrowAtlas('menuchar/options');
 	        menuoptionschar.scale.x = scale;
 	        menuoptionschar.scale.y = scale;
+		menuoptionschar.x = -450;
+		menuoptionschar.y = 90;
 	        menuoptionschar.animation.addByPrefix('a', 'options', 24, true);
 		menuoptionschar.visible = false;
 		menuoptionschar.antialiasing = ClientPrefs.globalAntialiasing;
 		menuoptionschar.updateHitbox();
-		menuoptionschar.screenCenter(X);
+		menuoptionschar.screenCenter();
 	        add(menuoptionschar);
 		
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
