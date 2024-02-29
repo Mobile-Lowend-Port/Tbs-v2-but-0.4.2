@@ -182,7 +182,7 @@ class MainMenuState extends MusicBeatState
 	        menuoptionschar.scale.y = scale;
 		menuoptionschar.x = -750;
 		menuoptionschar.y = 90;
-	        menuoptionschar.animation.addByPrefix('a', 'options', 24, true);
+	        menuoptionschar.animation.addByPrefix('nb', 'options', 24, true);
 		menuoptionschar.visible = false;
 		menuoptionschar.antialiasing = ClientPrefs.globalAntialiasing;
 		menuoptionschar.updateHitbox();
@@ -338,7 +338,7 @@ class MainMenuState extends MusicBeatState
 
 	function optionsshit()
 	{
-	if (optionShit[curSelected] == 'storymode')
+	if (optionShit[curSelected] == 'story_mode')
 	{
 	menucreditschar.visible = false;
 	menuoptionschar.visible = false;
