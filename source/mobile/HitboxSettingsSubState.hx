@@ -1,4 +1,4 @@
-package android;
+package mobile;
 
 #if desktop
 import Discord.DiscordClient;
@@ -38,15 +38,6 @@ class HitboxSettingsSubState extends BaseOptionsMenu
 	{
 		title = 'Hitbox Settings';
 		rpcTitle = 'Hitbox Settings Menu'; //hi, you can ask what is that, i will answer it's all what you needed lol.
-		
-
-		var option:Option = new Option('Hitbox Mode:',
-			"Choose your Hitbox Style!  -mariomaster",
-			'hitboxmode',
-			'string',
-			'Classic',
-			['Classic', 'New']);
-		  addOption(option);
 		  
 		var option:Option = new Option('Hitbox Opacity', //mariomaster was here again
 			'Changes opacity',
