@@ -1,10 +1,10 @@
-package android;
+package mobile.flixel;
 
 import flixel.FlxG;
 import flixel.group.FlxSpriteGroup;
 import openfl.display.BitmapData;
 import openfl.display.Shape;
-import android.flixel.FlxButton;
+import mobile.flixel.FlxButton;
 
 /**
  * A zone with 4 hint's (A hitbox).
@@ -12,7 +12,7 @@ import android.flixel.FlxButton;
  *
  * @author Mihai Alexandru (M.A. Jigsaw)
  */
-class FlxNewHitbox extends FlxSpriteGroup
+class FlxHitbox extends FlxSpriteGroup
 {
 	public var buttonLeft:FlxButton = new FlxButton(0, 0);
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
