@@ -232,22 +232,6 @@ class MobileControlsSubState extends FlxSubState
 	{
 		switch (daChoice)
 		{
-			case 'Pad-Right':
-				removeControls();
-				virtualPad = new FlxVirtualPad(RIGHT_FULL, NONE);
-				add(virtualPad);
-			case 'Pad-Left':
-				removeControls();
-				virtualPad = new FlxVirtualPad(LEFT_FULL, NONE);
-				add(virtualPad);
-			case 'Pad-Custom':
-				removeControls();
-				virtualPad = MobileControls.customVirtualPad;
-				add(virtualPad);
-			case 'Pad-Duo':
-				removeControls();
-				virtualPad = new FlxVirtualPad(BOTH_FULL, NONE);
-				add(virtualPad);
 			case 'Hitbox':
 				removeControls();
 				hitbox = new FlxHitbox();
