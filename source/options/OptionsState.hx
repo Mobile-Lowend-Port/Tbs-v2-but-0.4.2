@@ -113,7 +113,7 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 		
 		#if mobile
-		addVirtualPad(UP_DOWN, A_B_C);
+		addVirtualPad(UP_DOWN, A_B_X_Y);
 		#end
 
 		super.create();
@@ -144,11 +144,17 @@ class OptionsState extends MusicBeatState
 		}
 		
 		#if mobile
-		if (virtualPad.buttonC.justPressed) {
+		if (virtualPad.buttonX.justPressed) {
 		  #if mobile 
 		  removeVirtualPad();
 		  #end
 		  openSubState(new mobile.MobileControlsSubState());
+		if (virtualpad.buttonY.justPressed) {
+		  #if mobile 
+		  removeVirtualPad();
+		  #end
+		  openSubState(new mobile.HitboxSettingsSubState());
+		}
 		}
 		#end
 	}
