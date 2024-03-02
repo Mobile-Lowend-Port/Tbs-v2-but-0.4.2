@@ -2060,7 +2060,7 @@ class PlayState extends MusicBeatState
 			mobileControls.visible = true;
 			#end	
 			}
-		if (SONG.song == "Vanishing" || SONG.song == "Sirokou")
+		if (SONG.song == "Vanishing" || SONG.song == "Sirokou" || SONG.song == "vanishing" || SONG.song == "sirokou")
 			{
 			space = true;
 			}
@@ -2347,6 +2347,11 @@ class PlayState extends MusicBeatState
 		FlxG.sound.music.pitch = playbackRate;
 		FlxG.sound.music.onComplete = finishSong.bind();
 		vocals.play();
+		
+		if (SONG.song == "Vanishing" || SONG.song == "Sirokou" || SONG.song == "vanishing" || SONG.song == "sirokou")
+		{
+		space = true;
+		}
 
 		if(startOnTime > 0)
 		{
