@@ -141,7 +141,7 @@ class MainMenuState extends MusicBeatState
 
 		//FlxG.camera.follow(camFollowPos, null, 1);
 
-		menustorychar = new FlxSprite(-550);
+		menustorychar = new FlxSprite(-550, 0);
 	        menustorychar.frames = Paths.getSparrowAtlas('mainmenuchar/storymode');
 	        menustorychar.scale.x = scaleChar;
 	        menustorychar.scale.y = scaleChar;
@@ -155,7 +155,7 @@ class MainMenuState extends MusicBeatState
 		menustorychar.screenCenter();
 	        add(menustorychar);
 		
-                menufreechar = new FlxSprite(-550);
+                menufreechar = new FlxSprite(-550, 0);
 	        menufreechar.frames = Paths.getSparrowAtlas('mainmenuchar/freeplay');
 	        menufreechar.scale.x = scaleChar;
 	        menufreechar.scale.y = scaleChar;
@@ -169,7 +169,7 @@ class MainMenuState extends MusicBeatState
 		menufreechar.screenCenter();
 	        add(menufreechar);
 
-		menucreditschar = new FlxSprite(-550);
+		menucreditschar = new FlxSprite(-550, 0);
 	        menucreditschar.frames = Paths.getSparrowAtlas('mainmenuchar/credits');
 	        menucreditschar.scale.x = scaleChar;
 	        menucreditschar.scale.y = scaleChar;
@@ -183,7 +183,7 @@ class MainMenuState extends MusicBeatState
 		menucreditschar.screenCenter();
 	        add(menucreditschar);
 
-		menuoptionschar = new FlxSprite(-550);
+		menuoptionschar = new FlxSprite(-550, 0);
 	        menuoptionschar.frames = Paths.getSparrowAtlas('mainmenuchar/options');
 	        menuoptionschar.scale.x = scaleChar;
 	        menuoptionschar.scale.y = scaleChar;
