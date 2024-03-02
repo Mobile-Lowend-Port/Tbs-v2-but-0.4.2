@@ -87,25 +87,25 @@ end
 
 function onUpdate()
 	if songName == 'Freeplay2' then
-              if keyJustPressed('back') then
+              if keyJustPressed('left') then
 			exitMenu()
               end
 
-		if keyboardJustPressed('right') then
+		if keyJustPressed('right') then
 				playSound('play');
 		end
 
-		if keyboardJustPressed('UP') or keyboardJustPressed('DOWN') then
+		if keyJustPressed('up') or keyJustPressed('down') then
 
-			if ProductSelected >= MaxProductLimit and keyboardJustPressed('DOWN') then
+			if ProductSelected >= MaxProductLimit and keyJustPressed('down') then
 				ProductSelected = 1
-			elseif ProductSelected <= MinProductLimit and keyboardJustPressed('UP') then
+			elseif ProductSelected <= MinProductLimit and keyJustPressed('up') then
 				ProductSelected = 5
 			else
-				if keyboardJustPressed('DOWN') then
+				if keyJustPressed('down') then
 					ProductSelected = ProductSelected + 1
 				end
-				if keyboardJustPressed('UP') then
+				if keyJustPressed('up') then
 					ProductSelected = ProductSelected - 1
 				end
 			end
@@ -168,22 +168,22 @@ function onUpdate()
 			removeLuaSprite('selectIcon')
 			playSound('select');
 		end
-		if ProductSelected == 1 and keyboardJustPressed('right') then
+		if ProductSelected == 1 and keyJustPressed('right') then
                     loadSong('HFS-old');
-            elseif ProductSelected == 2 and keyboardJustPressed('right') then
+            elseif ProductSelected == 2 and keyJustPressed('right') then
                     loadSong('invade-old');
-            elseif ProductSelected == 3 and keyboardJustPressed('right') then
+            elseif ProductSelected == 3 and keyJustPressed('right') then
                     loadSong('meme-mania-old');
-            elseif ProductSelected == 4 and keyboardJustPressed('right') then
+            elseif ProductSelected == 4 and keyJustPressed('right') then
                     loadSong('funny-cartoon-old');
-            elseif ProductSelected == 5 and keyboardJustPressed('right') then
+            elseif ProductSelected == 5 and keyJustPressed('right') then
                     loadSong('vanishing-old');
 		  end
           end
         end
 
 function onTimerCompleted(tag, loops, loopsLeft)
-	if keyJustPressed('back') and songName == 'Freeplay2' then
+	if keyJustPressed('left') and songName == 'Freeplay2' then
 		exitMenu();
 	end
 end

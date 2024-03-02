@@ -67,25 +67,25 @@ end
 
 function onUpdate()
 	if songName == 'Freeplay3' then
-              if keyJustPressed('back') then
+              if keyJustPressed('left') then
 			exitMenu()
               end
 
-		if keyboardJustPressed('right') then
+		if keyJustPressed('right') then
 				playSound('play');
 		end
 
-		if keyboardJustPressed('UP') or keyboardJustPressed('DOWN') then
+		if keyJustPressed('up') or keyJustPressed('down') then
 
-			if ProductSelected >= MaxProductLimit and keyboardJustPressed('DOWN') then
+			if ProductSelected >= MaxProductLimit and keyJustPressed('down') then
 				ProductSelected = 1
-			elseif ProductSelected <= MinProductLimit and keyboardJustPressed('UP') then
+			elseif ProductSelected <= MinProductLimit and keyJustPressed('up') then
 				ProductSelected = 3
 			else
-				if keyboardJustPressed('DOWN') then
+				if keyJustPressed('down') then
 					ProductSelected = ProductSelected + 1
 				end
-				if keyboardJustPressed('UP') then
+				if keyJustPressed('up') then
 					ProductSelected = ProductSelected - 1
 				end
 			end
@@ -114,18 +114,18 @@ function onUpdate()
 			removeLuaSprite('selectIcon')
 			playSound('select');
 		end
-		if ProductSelected == 1 and keyboardJustPressed('right') then
+		if ProductSelected == 1 and keyJustPressed('right') then
                     loadSong('House-for-sale');
-            elseif ProductSelected == 2 and keyboardJustPressed('right') then
+            elseif ProductSelected == 2 and keyJustPressed('right') then
                     loadSong('vanishing');
-            elseif ProductSelected == 3 and keyboardJustPressed('right') then
+            elseif ProductSelected == 3 and keyJustPressed('right') then
                     loadSong('sirokou');
 		  end
           end
         end
 
 function onTimerCompleted(tag, loops, loopsLeft)
-	if keyJustPressed('back') and songName == 'Freeplay3' then
+	if keyJustPressed('left') and songName == 'Freeplay3' then
 		exitMenu();
 	end
 end

@@ -57,27 +57,27 @@ end
 
 function onUpdate()
 	if songName == 'Freeplay' then
-              if keyJustPressed('back') then
+              if keyJustPressed('left') then
 			exitMenu()
               end
 
-		if keyboardJustPressed('right') then
+		if keyJustPressed('right') then
 				playSound('play');
 		end
 
-		if keyboardJustPressed('UP') or keyboardJustPressed('DOWN') then
+		if keyJustPressed('up') or keyJustPressed('down') then
 
-			if ProductSelected >= MaxProductLimit and keyboardJustPressed('UP') then
+			if ProductSelected >= MaxProductLimit and keyJustPressed('up') then
 				ProductSelected = 1
-			elseif ProductSelected <= MinProductLimit and keyboardJustPressed('DOWN') then
+			elseif ProductSelected <= MinProductLimit and keyJustPressed('down') then
 				ProductSelected = 2
-			elseif ProductSelected <= MinProductLimit and keyboardJustPressed('DOWN') then
+			elseif ProductSelected <= MinProductLimit and keyJustPressed('down') then
 				ProductSelected = 3
 			else
-				if keyboardJustPressed('UP') then
+				if keyJustPressed('up') then
 					ProductSelected = ProductSelected + 1
 				end
-				if keyboardJustPressed('DOWN') then
+				if keyJustPressed('down') then
 					ProductSelected = ProductSelected - 1
 				end
 			end
@@ -107,9 +107,9 @@ end
 			removeLuaSprite('selectIcon')
 			playSound('select');
 		end
-		if ProductSelected == 1 and keyboardJustPressed('right') then
+		if ProductSelected == 1 and keyJustPressed('right') then
                     loadSong('kaboom');
-            elseif ProductSelected == 2 and keyboardJustPressed('right') then
+            elseif ProductSelected == 2 and keyJustPressed('right') then
                     loadSong('triple-trouble');
  
 		end
@@ -117,7 +117,7 @@ end
         end
 
 function onTimerCompleted(tag, loops, loopsLeft)
-	if keyJustPressed('back') and songName == 'Freeplay' then
+	if keyJustPressed('left') and songName == 'Freeplay' then
 		exitMenu();
 	end
 end
