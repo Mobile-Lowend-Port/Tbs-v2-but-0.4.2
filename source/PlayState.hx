@@ -214,7 +214,7 @@ class PlayState extends MusicBeatState
 	public var cpuControlled:Bool = false;
 	public var practiceMode:Bool = false;
 	
-	public static var space:Bool = false;
+	public static var space:Bool = true;
 
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
