@@ -2054,7 +2054,7 @@ class PlayState extends MusicBeatState
 
 	public function startCountdown():Void
 	{
-	if (SONG.song == "Freeplay" || SONG.song == "Freeplay1" || SONG.song == "Freeplay2" || SONG.song == "Freeplay3" || SONG.song == "Freeplay4" || SONG.song == "Freeplay5")
+	if (SONG.song == "Freeplay" || SONG.song == "Freeplay1" || SONG.song == "Freeplay2" || SONG.song == "Freeplay3" || SONG.song == "Freeplay4" || SONG.song == "Freeplay5" || SONG.song == "Sirokou")
 			{
 			#if mobile
 			mobileControls.visible = true;
