@@ -213,6 +213,8 @@ class PlayState extends MusicBeatState
 	public var instakillOnMiss:Bool = false;
 	public var cpuControlled:Bool = false;
 	public var practiceMode:Bool = false;
+	
+	public static var space:Bool = false;
 
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
@@ -2058,6 +2060,10 @@ class PlayState extends MusicBeatState
 			mobileControls.visible = true;
 			#end	
 			}
+		if (SONG.song == "Vanishing" || SONG.song == "Sirokou")
+			{
+			space = true;
+			}
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown', []);
 			return;
@@ -3884,6 +3890,10 @@ class PlayState extends MusicBeatState
 			#if mobile
 			mobileControls.visible = true;
 			#end
+		if (SONG.song == "Vanishing" || SONG.song == "Sirokou")
+			{
+			space = false;
+			}
 		timeBarBG.visible = false;
 		timeBar.visible = false;
 		timeTxt.visible = false;
