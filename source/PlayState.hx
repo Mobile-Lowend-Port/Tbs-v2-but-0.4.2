@@ -1250,7 +1250,7 @@ class PlayState extends MusicBeatState
 				case 'blue':
 				startVideo('blue-begin');
 				
-				case 'funny cartoon'
+				case 'funny cartoon':
 				startVideo('pibby-start');
 				
 				case "House for sale":
