@@ -3908,7 +3908,7 @@ class PlayState extends MusicBeatState
 				case 'shattered':
 				startVideo('blue-end');
 				
-				case 'unstoppable block'
+				case 'unstoppable block':
 				startVideo('pibby-stop');
 				
 				case "sirokou":
