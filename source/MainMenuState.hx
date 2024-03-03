@@ -107,7 +107,7 @@ class MainMenuState extends MusicBeatState
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
-		var scale:Float = 0.7;
+		var scale:Float = 0.5;
 		var scaleChar:Float = 1;
 		/*if(optionShit.length > 6) {
 			scale = 6 / optionShit.length;
