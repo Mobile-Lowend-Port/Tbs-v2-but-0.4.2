@@ -1,6 +1,6 @@
 function onCreate()
 	
-makeLuaSprite('uglyHB', 'healthbar', 0, 0)
+makeLuaSprite('uglyHB', 'healthbar', 0, 50)
 	setObjectCamera('uglyHB', 'hud')
 	
 setScrollFactor('uglyHB', 0.9, 0.9)
@@ -17,12 +17,15 @@ function onCreatePost()
     setProperty('uglyHB.alpha',  getPropertyFromClass('ClientPrefs', 'healthBarAlpha'))
 
     
-setProperty('uglyHB.x', getProperty('healthBar.x') - 4)
+setProperty('uglyHB.x', getProperty('healthBar.x') - 19)
 
     
 setProperty('uglyHB.angle', getProperty('healthBar.angle'))
     
-setProperty('uglyHB.y', getProperty('healthBar.y') - 7)
+setProperty('uglyHB.y', getProperty('healthBar.y') - -7)
+
+setProperty('healthBar.y', getProperty('uglyHB.y') - -15)
+setProperty('healthBar.x', getProperty('uglyHB.x') - -5)
     
 setProperty('uglyHB.scale.x', getProperty('healthBar.scale.x'))
     
