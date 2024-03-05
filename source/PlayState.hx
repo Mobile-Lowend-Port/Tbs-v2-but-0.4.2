@@ -72,8 +72,13 @@ import sys.io.File;
 #end
 
 #if VIDEOS_ALLOWED
-import hxcodec.VideoHandler;
-import hxcodec.VideoSprite;
+#if (hxCodec >= "2.6.1") 
+import hxcodec.VideoHandler as MP4Handler;
+#elseif (hxCodec == "2.6.0") 
+import VideoHandler as MP4Handler;
+#else 
+import VideoHandler as MP4Handler;
+#end
 #end
 
 using StringTools;
@@ -1524,15 +1529,19 @@ class PlayState extends MusicBeatState
 		inCutscene = true;
 
 		var filepath:String = Paths.video(name);
+		#if desktop
 		if(!FileSystem.exists(filepath))
+		#else
+		if(!OpenFlAssets.exists(filepath))
+		#end
 		{
 			FlxG.log.warn('Couldnt find video file: ' + name);
 			startAndEnd();
 			return;
 		}
 
-		var video:VideoHandler = new VideoHandler();
-		video.playVideo(filepath);
+		var video:MP4Handler = new MP4Handler();
+		video.playVideo(Asset2File.getPath(filepath));
 		video.finishCallback = function()
 		{
 			startAndEnd();
