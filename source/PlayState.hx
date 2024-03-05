@@ -1045,9 +1045,6 @@ class PlayState extends MusicBeatState
 		if (SONG.song == "Vanishing" || SONG.song == "Sirokou" || SONG.song == "vanishing" || SONG.song == "sirokou")
 			{
 			space = true;
-			#if mobile
-			mobileControls.visible = true;
-			#end
 			}
 
 		if(ClientPrefs.timeBarType == 'Song Name')
