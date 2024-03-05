@@ -214,7 +214,7 @@ class PlayState extends MusicBeatState
 	public var cpuControlled:Bool = false;
 	public var practiceMode:Bool = false;
 	
-	public static var space:Bool = true;
+	public static var space:Bool = false;
 
 	public var botplaySine:Float = 0;
 	public var botplayTxt:FlxText;
@@ -1041,6 +1041,11 @@ class PlayState extends MusicBeatState
 		strumLineNotes = new FlxTypedGroup<StrumNote>();
 		add(strumLineNotes);
 		add(grpNoteSplashes);
+		
+		if (SONG.song == "Vanishing" || SONG.song == "Sirokou" || SONG.song == "vanishing" || SONG.song == "sirokou")
+			{
+			space = true;
+			}
 
 		if(ClientPrefs.timeBarType == 'Song Name')
 		{
@@ -2011,10 +2016,7 @@ class PlayState extends MusicBeatState
 			mobileControls.visible = true;
 			#end	
 			}
-		if (SONG.song == "Vanishing" || SONG.song == "Sirokou" || SONG.song == "vanishing" || SONG.song == "sirokou")
-			{
-			space = true;
-			}
+		
 		
 		if(startedCountdown) {
 			callOnLuas('onStartCountdown', []);
@@ -3322,6 +3324,11 @@ class PlayState extends MusicBeatState
 				deathCounter++;
 
 				paused = true;
+				
+				if (SONG.song == "Vanishing" || SONG.song == "Sirokou" || SONG.song == "vanishing" || SONG.song == "sirokou")
+			{
+			space = false;
+			}
 
 				vocals.stop();
 				FlxG.sound.music.stop();
