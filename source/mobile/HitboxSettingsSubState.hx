@@ -54,7 +54,7 @@ class HitboxSettingsSubState extends BaseOptionsMenu
 			'Changes opacity',
 			'virtualPadAlpha',
 			'float',
-			0.2);
+			0.5);
 		option.scrollSpeed = 1.6;
 		option.minValue = 0.0;
 		option.maxValue = 1;
