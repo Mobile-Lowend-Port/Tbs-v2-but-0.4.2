@@ -2991,6 +2991,14 @@ class PlayState extends MusicBeatState
 		{
 			openChartEditor();
 		}
+		
+		if (SONG.song == "Vanishing" || SONG.song == "Sirokou")
+		{
+		if (isDead)
+			{
+			space = false;
+			}
+		}
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
