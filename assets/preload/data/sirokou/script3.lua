@@ -20,7 +20,7 @@ function onStartCountdown()
 end
 
 function onUpdate()
- if keyJustPressed('space') and confirmed == 0 then
+ if mouseClicked('left') and confirmed == 0 then
   allowCountdown = true
   startCountdown();
   doTweenAlpha('nomorewarningimage', 'warningimage', 0, 1, sineOut);
