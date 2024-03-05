@@ -45,7 +45,7 @@ jobs:
           haxelib install hxcpp 4.2.1 > /dev/null --quiet
           haxelib install lime 7.9.0
           haxelib install openfl 9.1.0
-          haxelib install flixel 5.2.2
+          haxelib install flixel 4.11.0
           haxelib install flixel-tools
           haxelib install flixel-ui
           haxelib install flixel-addons 3.0.2
@@ -66,7 +66,7 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
           haxelib set openfl 9.1.0
           haxelib set lime 7.9.0
-          haxelib set flixel 5.2.2
+          haxelib set flixel 4.11.0
           haxelib set hxCodec 2.6.1
           haxelib set flixel-addons 3.0.2
           haxelib set hxcpp 4.2.1
