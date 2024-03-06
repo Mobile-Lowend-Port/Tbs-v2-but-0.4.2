@@ -317,6 +317,9 @@ class PlayState extends MusicBeatState
 	public var luaArray:Array<FunkinLua> = [];
 	private var luaDebugGroup:FlxTypedGroup<DebugLuaText>;
 	public var introSoundsSuffix:String = '';
+	
+	// Hscript
+	public var script:Script;
 
 	// Debug buttons
 	private var debugKeysChart:Array<FlxKey>;
@@ -1301,6 +1304,12 @@ class PlayState extends MusicBeatState
 			FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 		}
 		callOnLuas('onCreatePost', []);
+		
+		if (script != null)
+		{
+			script.executeFunc("onCreate");
+			script.executeFunc("onCreatePost");
+		}
 
 		super.create();
 
@@ -2360,6 +2369,10 @@ class PlayState extends MusicBeatState
 		#end
 		setOnLuas('songLength', songLength);
 		callOnLuas('onSongStart', []);
+		if (script != null)
+		{
+			script.executeFunc("onSongStart");
+		}
 	}
 
 	var debugNum:Int = 0;
@@ -2826,6 +2839,12 @@ class PlayState extends MusicBeatState
 			iconP1.swapOldIcon();
 		}*/
 		callOnLuas('onUpdate', [elapsed]);
+		
+		if (script != null)
+		{
+			script.setVariable("elapsed", elapsed);
+			script.executeFunc("onUpdate");
+		}
 
 		switch (curStage)
 		{
@@ -3285,6 +3304,11 @@ class PlayState extends MusicBeatState
 		setOnLuas('cameraY', camFollowPos.y);
 		setOnLuas('botPlay', cpuControlled);
 		callOnLuas('onUpdatePost', [elapsed]);
+		if (script != null)
+		{
+			script.setVariable("elapsed", elapsed);
+			script.executeFunc("onUpdatePost");
+		}
 	}
 
 	function openPauseMenu()
@@ -3775,6 +3799,13 @@ class PlayState extends MusicBeatState
 				}
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
+		if (script != null)
+		{
+			script.setVariable("eventName", eventName);
+			script.setVariable("value1", value1);
+			script.setVariable("value2", value2);
+			script.executeFunc("onEvent");
+		}
 	}
 
 	function moveCameraSection():Void {
@@ -3787,6 +3818,11 @@ class PlayState extends MusicBeatState
 			camFollow.y += gf.cameraPosition[1] + girlfriendCameraOffset[1];
 			tweenCamIn();
 			callOnLuas('onMoveCamera', ['gf']);
+			if (script != null)
+		{
+			script.setVariable("gf", gf);
+			script.executeFunc("onMoveCamera");
+		}
 			return;
 		}
 
@@ -3794,11 +3830,25 @@ class PlayState extends MusicBeatState
 		{
 			moveCamera(true);
 			callOnLuas('onMoveCamera', ['dad']);
+			if (script != null)
+		{
+			script.setVariable("dad", dad);
+			script.executeFunc("onMoveCamera");
+		}
 		}
 		else
 		{
 			moveCamera(false);
 			callOnLuas('onMoveCamera', ['boyfriend']);
+			if (script != null)
+		{
+			script.setVariable("boyfriend", boyfriend);
+			script.executeFunc("onMoveCamera");
+		}
+		}
+		if (script != null)
+		{
+			script.executeFunc("onMoveCamera");
 		}
 	}
 
@@ -5005,6 +5055,11 @@ class PlayState extends MusicBeatState
 		lastStepHit = curStep;
 		setOnLuas('curStep', curStep);
 		callOnLuas('onStepHit', []);
+		if (script != null)
+		{
+			script.setVariable("curStep", curStep);
+			script.executeFunc("onStepHit");
+		}
 	}
 
 	var lightningStrikeBeat:Int = 0;
@@ -5103,6 +5158,11 @@ class PlayState extends MusicBeatState
 
 		setOnLuas('curBeat', curBeat); //DAWGG?????
 		callOnLuas('onBeatHit', []);
+		if (script != null)
+		{
+			script.setVariable("curBeat", curBeat);
+			script.executeFunc("onBeatHit");
+		}
 	}
 
 	override function sectionHit()
@@ -5352,7 +5412,7 @@ class PlayState extends MusicBeatState
 
 		if (hxdata != "")
 		{
-			var script = new Script();
+			script = new Script();
 
 			script.setVariable("onSongStart", function()
 			{
@@ -5365,6 +5425,10 @@ class PlayState extends MusicBeatState
 			script.setVariable("onCreate", function()
 			{
 			});
+			
+			script.setVariable("onCreatePost", function()
+			{
+			});
 
 			script.setVariable("onStartCountdown", function()
 			{
@@ -5373,8 +5437,20 @@ class PlayState extends MusicBeatState
 			script.setVariable("onStepHit", function()
 			{
 			});
+			
+			script.setVariable("onEvent", function()
+			{
+			});
+			
+			script.setVariable("onBeatHit", function()
+			{
+			});
 
 			script.setVariable("onUpdate", function()
+			{
+			});
+			
+			script.setVariable("onUpdatePost", function()
 			{
 			});
 			
@@ -5396,6 +5472,9 @@ class PlayState extends MusicBeatState
 			});
 
 			script.setVariable("curStep", curStep);
+			script.setVariable("curBeat", curBeat);
+			script.setVariable("value1", value1);
+			script.setVariable("value2", value2);
 			script.setVariable("bpm", SONG.bpm);
 
 			// PRESET CLASSES
@@ -5408,7 +5487,7 @@ class PlayState extends MusicBeatState
 			script.setVariable("ClientPrefs", ClientPrefs);
 			script.setVariable("FlxTimer", FlxTimer);
 			script.setVariable("Main", Main);
-			//script.setVariable("Event", event);
+			script.setVariable("eventName", eventName);
 			script.setVariable("Conductor", Conductor);
 			script.setVariable("Std", Std);
 			script.setVariable("FlxTextBorderStyle", FlxTextBorderStyle);
