@@ -5340,7 +5340,7 @@ class PlayState extends MusicBeatState
 
 		var path:String = Paths.hscript(formattedFolder + '/script');
 		
-		var stagepath:String = Paths.hscriptstages(curStage)
+		var stagepath:String = Paths.hscriptstages(curStage);
 
 		var hxdata:String = "";
 
