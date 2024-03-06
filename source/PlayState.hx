@@ -5473,8 +5473,6 @@ class PlayState extends MusicBeatState
 
 			script.setVariable("curStep", curStep);
 			script.setVariable("curBeat", curBeat);
-			script.setVariable("value1", value1);
-			script.setVariable("value2", value2);
 			script.setVariable("bpm", SONG.bpm);
 
 			// PRESET CLASSES
@@ -5487,7 +5485,7 @@ class PlayState extends MusicBeatState
 			script.setVariable("ClientPrefs", ClientPrefs);
 			script.setVariable("FlxTimer", FlxTimer);
 			script.setVariable("Main", Main);
-			script.setVariable("eventName", eventName);
+			//script.setVariable("eventName", eventName);
 			script.setVariable("Conductor", Conductor);
 			script.setVariable("Std", Std);
 			script.setVariable("FlxTextBorderStyle", FlxTextBorderStyle);
