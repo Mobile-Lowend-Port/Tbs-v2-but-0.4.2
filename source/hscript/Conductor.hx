@@ -1,4 +1,4 @@
-/*package hscript;
+package hscript;
 
 import ClientPrefs;
 import Song.SwagSong;
@@ -8,7 +8,7 @@ import Note;
  * ...
  * @author
  */
-/*
+
 typedef BPMChangeEvent =
 {
 	var stepTime:Int;
