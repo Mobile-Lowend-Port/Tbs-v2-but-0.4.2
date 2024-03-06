@@ -1,8 +1,8 @@
-package song;
+package hscript;
 
-import data.ClientPrefs;
-import data.Song.SwagSong;
-import gameObjects.Note;
+import ClientPrefs;
+import Song.SwagSong;
+import Note;
 
 /**
  * ...
