@@ -60,7 +60,6 @@ import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
 import Conductor.Rating;
-import hscript.Conductor;
 import hscript.Script;
 
 #if !flash 
