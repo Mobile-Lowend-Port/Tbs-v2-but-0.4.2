@@ -5340,7 +5340,7 @@ class PlayState extends MusicBeatState
 
 		var path:String = Paths.hscript(formattedFolder + '/script');
 		
-		var stagepath:String = Paths.hscriptstages('stages/' + curStage)
+		var stagepath:String = Paths.hscriptstages(curStage)
 
 		var hxdata:String = "";
 
@@ -5375,6 +5375,10 @@ class PlayState extends MusicBeatState
 			});
 
 			script.setVariable("onUpdate", function()
+			{
+			});
+			
+			script.setVariable("onMoveCamera", function()
 			{
 			});
 
