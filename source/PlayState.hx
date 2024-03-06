@@ -5352,7 +5352,7 @@ class PlayState extends MusicBeatState
 
 		if (hxdata != "")
 		{
-			script = new Script();
+			var script = new Script();
 
 			script.setVariable("onSongStart", function()
 			{
