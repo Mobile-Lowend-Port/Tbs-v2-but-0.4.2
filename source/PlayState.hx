@@ -60,6 +60,7 @@ import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
 import Conductor.Rating;
+import hscript.Conductor;
 import hscript.Script;
 
 #if !flash 
@@ -5407,7 +5408,7 @@ class PlayState extends MusicBeatState
 			script.setVariable("ClientPrefs", ClientPrefs);
 			script.setVariable("FlxTimer", FlxTimer);
 			script.setVariable("Main", Main);
-			script.setVariable("Event", Event);
+			//script.setVariable("Event", event);
 			script.setVariable("Conductor", Conductor);
 			script.setVariable("Std", Std);
 			script.setVariable("FlxTextBorderStyle", FlxTextBorderStyle);
