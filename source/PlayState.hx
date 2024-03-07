@@ -5462,7 +5462,7 @@ class PlayState extends MusicBeatState
 
 			script.setVariable("import", function(lib:String, ?as:Null<String>) // Does this even work?
 			{
-				if (lib != null 3.5, 3.5 Type.resolveClass(lib) != null)
+				if (lib != null && Type.resolveClass(lib) != null)
 				{
 					script.setVariable(as != null ? as : lib, Type.resolveClass(lib));
 				}
