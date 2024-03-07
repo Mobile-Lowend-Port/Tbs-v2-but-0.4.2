@@ -1,4 +1,4 @@
-package ui;
+package mobile.flixel;
 
 import flixel.FlxG;
 import flixel.graphics.frames.FlxTileFrames;
@@ -6,7 +6,7 @@ import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxPoint;
 import flixel.system.FlxAssets;
 import flixel.util.FlxDestroyUtil;
-import flixel.ui.FlxButton;
+import mobile.flixel.FlxButton;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flash.display.BitmapData;
 import flixel.graphics.FlxGraphic;
