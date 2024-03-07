@@ -5412,7 +5412,7 @@ class PlayState extends MusicBeatState
 		if (OpenFlAssets.exists(stagepath))
 			hxsdata = OpenFlAssets.getText(stagepath);
 
-		if (hxdata != "" && hxsdata != "")
+		if (hxdata != "" || hxsdata != "")
 		{
 			script = new Script();
 
