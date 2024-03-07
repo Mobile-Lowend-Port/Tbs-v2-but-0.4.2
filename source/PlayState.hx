@@ -5480,7 +5480,7 @@ class PlayState extends MusicBeatState
 			// PRESET CLASSES
 			script.setVariable("PlayState", instance);
 			script.setVariable("FlxTween", FlxTween);
-			script.setVariable("FlxColor", FlxColor);
+			//script.setVariable("FlxColor", FlxColor); error
 			script.setVariable("FlxEase", FlxEase);
 			script.setVariable("FlxSprite", FlxSprite);
 			script.setVariable("Math", Math);
