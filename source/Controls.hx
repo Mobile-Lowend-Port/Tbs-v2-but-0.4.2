@@ -14,6 +14,7 @@ import flixel.input.keyboard.FlxKey;
 import mobile.flixel.FlxButton;
 import mobile.flixel.FlxHitbox;
 import mobile.flixel.FlxVirtualPad;
+import mobile.flixel.FlxOldVirtualPad;
 #end
 
 #if (haxe >= "4.0.0")
@@ -440,50 +441,50 @@ class Controls extends FlxActionSet
 		inline forEachBound(Control.SPACE, (action, state) -> addButtonUI(action, Hitbox.buttonSpace, state));
 	}
 
-	public function setVirtualPadUI(VirtualPad:FlxVirtualPad, DPad:FlxDPadMode, Action:FlxActionMode)
-	{
+	public function setVirtualPad(virtualPad:FlxVirtualPad, ?DPad:FlxDPadMode, ?Action:FlxActionMode) {
+		if (DPad == null)
+			DPad = NONE;
+		if (Action == null)
+			Action = NONE;
+		
 		switch (DPad)
 		{
 			case UP_DOWN:
-				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, VirtualPad.buttonUp, state));
-				inline forEachBound(Control.UI_DOWN, (action, state) -> addButtonUI(action, VirtualPad.buttonDown, state));
+				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, virtualPad.buttonUp, state));
+				inline forEachBound(Control.UI_DOWN, (action, state) -> addButtonUI(action, virtualPad.buttonDown, state));
 			case LEFT_RIGHT:
-				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, VirtualPad.buttonLeft, state));
-				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, VirtualPad.buttonRight, state));
+				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, virtualPad.buttonLeft, state));
+				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, virtualPad.buttonRight, state));
 			case UP_LEFT_RIGHT:
-				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, VirtualPad.buttonUp, state));
-				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, VirtualPad.buttonLeft, state));
-				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, VirtualPad.buttonRight, state));
-			case LEFT_FULL | RIGHT_FULL:
-				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, VirtualPad.buttonUp, state));
-				inline forEachBound(Control.UI_DOWN, (action, state) -> addButtonUI(action, VirtualPad.buttonDown, state));
-				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, VirtualPad.buttonLeft, state));
-				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, VirtualPad.buttonRight, state));
-			case BOTH_FULL:
-				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, VirtualPad.buttonUp, state));
-				inline forEachBound(Control.UI_DOWN, (action, state) -> addButtonUI(action, VirtualPad.buttonDown, state));
-				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, VirtualPad.buttonLeft, state));
-				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, VirtualPad.buttonRight, state));
-				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, VirtualPad.buttonUp2, state));
-				inline forEachBound(Control.UI_DOWN, (action, state) -> addButtonUI(action, VirtualPad.buttonDown2, state));
-				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, VirtualPad.buttonLeft2, state));
-				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, VirtualPad.buttonRight2, state));
-			case NONE: // do nothing
+				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, virtualPad.buttonUp, state));
+				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, virtualPad.buttonLeft, state));
+				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, virtualPad.buttonRight, state));
+			case FULL | RIGHT_FULL:
+				inline forEachBound(Control.UI_UP, (action, state) -> addButtonUI(action, virtualPad.buttonUp, state));
+				inline forEachBound(Control.UI_DOWN, (action, state) -> addButtonUI(action, virtualPad.buttonDown, state));
+				inline forEachBound(Control.UI_LEFT, (action, state) -> addButtonUI(action, virtualPad.buttonLeft, state));
+				inline forEachBound(Control.UI_RIGHT, (action, state) -> addButtonUI(action, virtualPad.buttonRight, state));
+			
+			case NONE:
 		}
 
 		switch (Action)
 		{
 			case A:
-				inline forEachBound(Control.ACCEPT, (action, state) -> addButtonUI(action, VirtualPad.buttonA, state));
-			case B:
-				inline forEachBound(Control.BACK, (action, state) -> addButtonUI(action, VirtualPad.buttonB, state));
-			case A_B | A_B_C | A_B_E | A_B_X_Y | A_B_C_X_Y | A_B_C_X_Y_Z | A_B_C_D_V_X_Y_Z:
-				inline forEachBound(Control.ACCEPT, (action, state) -> addButtonUI(action, VirtualPad.buttonA, state));
-				inline forEachBound(Control.BACK, (action, state) -> addButtonUI(action, VirtualPad.buttonB, state));
-			case NONE: // do nothing
+				inline forEachBound(Control.ACCEPT, (action, state) -> addButtonUI(action, virtualPad.buttonA, state));
+			case A_B:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addButtonUI(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addButtonUI(action, virtualPad.buttonB, state));
+			case A_B_C:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addButtonUI(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addButtonUI(action, virtualPad.buttonB, state));
+			case A_B_X_Y:
+				inline forEachBound(Control.ACCEPT, (action, state) -> addButtonUI(action, virtualPad.buttonA, state));
+				inline forEachBound(Control.BACK, (action, state) -> addButtonUI(action, virtualPad.buttonB, state));
+			case NONE:
 		}
 	}
-
+/*
 	public function setVirtualPadNOTES(VirtualPad:FlxVirtualPad, DPad:FlxDPadMode, Action:FlxActionMode)
 	{
 		switch (DPad)
@@ -527,7 +528,7 @@ class Controls extends FlxActionSet
 			case NONE: // do nothing
 		}
 	}
-
+*/
 	public function removeVirtualControlsInput(Tinputs:Array<FlxActionInput>)
 	{
 		for (action in this.digitalActions)
