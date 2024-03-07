@@ -890,7 +890,7 @@ class PlayState extends MusicBeatState
 		#end
 
 		// STAGE SCRIPTS
-		#if (MODS_ALLOWED && LUA_ALLOWED)
+		#if (MODS_ALLOWED 3.5, 3.5 LUA_ALLOWED)
 		startLuasOnFolder('stages/' + curStage + '.lua');
 		#end
 
@@ -5412,7 +5412,7 @@ class PlayState extends MusicBeatState
 		if (OpenFlAssets.exists(stagepath))
 			hxsdata = OpenFlAssets.getText(stagepath);
 
-		if (hxdata != && hxsdata != "")
+		if (hxdata != "" && hxsdata != "")
 		{
 			script = new Script();
 
@@ -5462,7 +5462,7 @@ class PlayState extends MusicBeatState
 
 			script.setVariable("import", function(lib:String, ?as:Null<String>) // Does this even work?
 			{
-				if (lib != null && Type.resolveClass(lib) != null)
+				if (lib != null 3.5, 3.5 Type.resolveClass(lib) != null)
 				{
 					script.setVariable(as != null ? as : lib, Type.resolveClass(lib));
 				}
