@@ -890,7 +890,7 @@ class PlayState extends MusicBeatState
 		#end
 
 		// STAGE SCRIPTS
-		#if (MODS_ALLOWED 3.5 && 3.5 LUA_ALLOWED)
+		#if (MODS_ALLOWED 3.5 , 3.5 LUA_ALLOWED)
 		startLuasOnFolder('stages/' + curStage + '.lua');
 		#end
 
@@ -5396,23 +5396,23 @@ class PlayState extends MusicBeatState
 	public function startScript()
 	{
 		var formattedFolder:String = Paths.formatToSongPath(SONG.song);
-		var curStageFolder:String = curStage;
+		//var curStageFolder:String = curStage;
 
 		var path:String = Paths.hscript(formattedFolder + '/script');
 		
-		var stagepath:String = Paths.hscriptstages(curStage);
+		//var stagepath:String = Paths.hscriptstages(curStage);
 
 		var hxdata:String = "";
 		
-		var hxsdata:String = "";
+		//var hxsdata:String = "";
 
 		if (OpenFlAssets.exists(path))
 			hxdata = OpenFlAssets.getText(path);
 		
-		if (OpenFlAssets.exists(stagepath))
-			hxsdata = OpenFlAssets.getText(stagepath);
+		//if (OpenFlAssets.exists(stagepath))
+			//hxsdata = OpenFlAssets.getText(stagepath);
 
-		if (hxdata != "" || hxsdata != "")
+		if (hxdata != "")
 		{
 			script = new Script();
 
@@ -5499,7 +5499,7 @@ class PlayState extends MusicBeatState
 			script.setVariable("FlxTextFormatMarkerPair", FlxTextFormatMarkerPair);
 
 			script.runScript(hxdata);
-			script.runScript(hxsdata);
+			//script.runScript(hxsdata);
 		}
 	}
 }
