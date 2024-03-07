@@ -1,4 +1,4 @@
 function onSongStart()
 {
-	FlxTween.tween(PlayState.camHUD, {alpha: 0}, 1);
+	//FlxTween.tween(PlayState.camHUD, {alpha: 0}, 1);
 }
