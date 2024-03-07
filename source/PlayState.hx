@@ -5403,14 +5403,16 @@ class PlayState extends MusicBeatState
 		var stagepath:String = Paths.hscriptstages(curStage);
 
 		var hxdata:String = "";
+		
+		var hxsdata:String = "";
 
 		if (OpenFlAssets.exists(path))
 			hxdata = OpenFlAssets.getText(path);
 		
 		if (OpenFlAssets.exists(stagepath))
-			hxdata = OpenFlAssets.getText(stagepath);
+			hxsdata = OpenFlAssets.getText(stagepath);
 
-		if (hxdata != "")
+		if (hxdata != && hxsdata != "")
 		{
 			script = new Script();
 
@@ -5478,6 +5480,7 @@ class PlayState extends MusicBeatState
 			// PRESET CLASSES
 			script.setVariable("PlayState", instance);
 			script.setVariable("FlxTween", FlxTween);
+			script.setVariable("FlxColor", FlxColor);
 			script.setVariable("FlxEase", FlxEase);
 			script.setVariable("FlxSprite", FlxSprite);
 			script.setVariable("Math", Math);
@@ -5496,6 +5499,7 @@ class PlayState extends MusicBeatState
 			script.setVariable("FlxTextFormatMarkerPair", FlxTextFormatMarkerPair);
 
 			script.runScript(hxdata);
+			script.runScript(hxsdata);
 		}
 	}
 }
