@@ -14,7 +14,7 @@ import flixel.input.keyboard.FlxKey;
 import mobile.flixel.FlxButton;
 import mobile.flixel.FlxHitbox;
 import mobile.flixel.FlxVirtualPad;
-import mobile.flixel.FlxOldVirtualPad;
+//import mobile.flixel.FlxOldVirtualPad;
 #end
 
 #if (haxe >= "4.0.0")
@@ -441,7 +441,7 @@ class Controls extends FlxActionSet
 		inline forEachBound(Control.SPACE, (action, state) -> addButtonUI(action, Hitbox.buttonSpace, state));
 	}
 
-	public function setVirtualPad(virtualPad:FlxVirtualPad, ?DPad:FlxDPadMode, ?Action:FlxActionMode) {
+	public function setVirtualPadUI(virtualPad:FlxVirtualPad, ?DPad:FlxDPadMode, ?Action:FlxActionMode) {
 		if (DPad == null)
 			DPad = NONE;
 		if (Action == null)
